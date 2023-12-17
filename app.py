@@ -1,15 +1,20 @@
-from imports import st
+"""
+Entry point for streamlit application
+Точка входа для streamlit-приложения
+"""
+
+import streamlit as st
 
 st.set_page_config(
     layout="wide",
     initial_sidebar_state="auto",
     page_title="Banks Clients EDA and prediction",
     page_icon='💰',
-
 )
 
+# set_page_config идёт до импорта из модуля eda ввиду требований библиотеки streamlit
 from eda import draw_barchart, draw_pie, num_distribution, categorical_distribution, nun_distribution, \
-    pirson_correlation
+    pearson_correlation, target_correlation
 
 
 def process_main_page() -> None:
@@ -30,7 +35,8 @@ def process_main_page() -> None:
         num_distribution()
         categorical_distribution()
         nun_distribution()
-        pirson_correlation()
+        pearson_correlation()
+        target_correlation()
 
     with tab2:
         st.title('⛏️ Идёт разработка...')
