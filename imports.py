@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-df = st.cache_data(pd.read_pickle)('data\\df_clean.p')
+df = st.cache_data(pd.read_pickle)('data//df_clean.p')
 
 charts_dict = {
     "Возраст": "AGE",

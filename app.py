@@ -23,7 +23,7 @@ def process_main_page() -> None:
     Задаёт необходимую структуру расположение элементов на главной странице приложения
     """
     st.title('Изучение клиентов банка и предсказание их поведения с помощью ML')
-    st.image('img\\bgr.png', use_column_width='auto',
+    st.image('img/bgr.png', use_column_width='auto',
              caption='Исследуем данные, предсказываем готовность клиентов к сотрудничеству: enjoy-ds@pm.me')
 
     tab1, tab2, tab3 = st.tabs(["Анализ", "Прогнозы", "Лучшая модель"])
