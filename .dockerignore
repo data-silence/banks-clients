@@ -1,0 +1,12 @@
+/models/
+/notebooks/
+
+/banks-clients.rar
+/data/df
+
+/.README.md
+/LICENSE
+
+/.dockerignore
+/.gitignore
+test.py
