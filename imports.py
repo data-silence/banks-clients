@@ -1,8 +1,44 @@
 import streamlit as st
-import pandas as pd
 import plotly.express as px
 
+import pandas as pd
+import pickle
+from random import choice
+
+from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score, confusion_matrix
+
+with open('models//ohe.pickle', 'rb') as f:
+    ohe_enc = pickle.load(f)
+
+with open('models//scaler.pickle', 'rb') as f:
+    scaler = pickle.load(f)
+
+with open('models//model_regular.pickle', 'rb') as f:
+    model_regular = pickle.load(f)
+
+with open('models//model_tuned.pickle', 'rb') as f:
+    model_tuned = pickle.load(f)
+
 df = st.cache_data(pd.read_pickle)('data//df_clean.p')
+y_test = pd.read_csv('data//y_test.csv')
+
+prediction_regular = pd.read_csv('data//Predictions_regular_test.csv', index_col='ID')
+prediction_tuned = pd.read_csv('data//Predictions_tuned_test.csv', index_col='ID')
+
+models = {
+    'cтандартная': {
+        'type': 'regular',
+        'name': 'логистическая регрессия',
+        'params': 'полиномиальные признаки',
+        'best_thr': 0.03,
+    },
+    'настроенная': {
+        'type': 'tuned',
+        'name': 'логистическая регрессия',
+        'params': 'С=1.2, max_iter=1000',
+        'best_thr': 0.11,
+    },
+}
 
 charts_dict = {
     "Возраст": "AGE",

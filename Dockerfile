@@ -5,7 +5,7 @@ EXPOSE 8501
 WORKDIR /app
 
 COPY . .
-COPY data/df_clean.p /app/data/df_clean.p
+COPY data/ /app/data/
 COPY img/ /app/img/
 COPY models/ /app/models/
 
