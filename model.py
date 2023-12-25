@@ -240,11 +240,11 @@ def draw_confusion_matrix(threshold, best_thr, model_type) -> None:
     delta = round(matrix_tuned / matrix_user, 1)
     st.write(f'Правильная для поставленной задачи тонкая настройка порога имеет свою материальную цену: нам придётся '
              f'заставить колл-центр Банка обзванивать в {delta} раз больше клиентов. Поэтому придётся считать, '
-             f'что выгодее: упустить потенциальных клиентов и недополучить доход, или нарастить себестоимость за счет '
+             f'что выгоднее: упустить потенциальных клиентов и недополучить доход, или нарастить себестоимость за счет '
              f'увеличения оплаты колл-центру')
 
 
-def draw_choise_df() -> tuple[pd.DataFrame]:
+def draw_choise_df() -> tuple[pd.DataFrame, pd.DataFrame]:
     """
     Обеспечивает выбор и отображение данных случайного пользователя Банка
     Provides selection and display of data from a random user of the Bank
