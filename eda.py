@@ -1,6 +1,6 @@
 """
 Module responsible for content and display of the EDA tab in streamlit application
-Модуль, отвечающий за содержание и отображение вкладки EDA в streamlit-приложении
+Модуль, отвечающий за содержание и отображение вкладки "Анализ" в streamlit-приложении
 """
 
 from imports import (st, pd, px, df, charts_dict, charts_texts, pie_dict, pie_texts, numeric_columns, target_distr_dict,
@@ -46,7 +46,7 @@ def draw_pie():
     st.caption(pie_texts[columns])
 
 
-def num_distribution():
+def draw_num_distribution():
     """
     Controls the display of a block drawing the distribution of numeric columns
     Управляет отображением блока, рисующего распределение числовых столбцов
@@ -61,7 +61,7 @@ def num_distribution():
     )
 
 
-def categorical_distribution():
+def draw_categorical_distribution():
     """
     Controls the display of a block drawing the distribution of categorical columns
     Управляет отображением блока, рисующего распределение категориальных столбцов
@@ -75,7 +75,7 @@ def categorical_distribution():
     )
 
 
-def nun_distribution():
+def draw_nun_distribution():
     """
     Controls the display of the block showing missing columns
     Управляет отображением блока, показывающим отсутствующие столбцы
@@ -89,7 +89,7 @@ def nun_distribution():
     )
 
 
-def pearson_correlation():
+def draw_pearson_correlation():
     """
     Controls the display of the block that builds the Pearson correlation
     Управляет отображением блока, который строит корреляцию Пирсона
@@ -106,7 +106,7 @@ def pearson_correlation():
     )
 
 
-def target_correlation():
+def draw_target_correlation():
     """
     Controls the display of the block that plots the scatter plots of the target variable
     Управляет отображением блока, который строит диаграммы рассеивания целевой переменной

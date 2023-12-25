@@ -1,8 +1,11 @@
 import streamlit as st
-import pandas as pd
-from random import choice
-import pickle
 import plotly.express as px
+
+import pandas as pd
+import pickle
+from random import choice
+
+from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score, confusion_matrix
 
 with open('models//ohe.pickle', 'rb') as f:
     ohe_enc = pickle.load(f)
